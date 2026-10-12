@@ -1,1 +1,6 @@
-<!doctype html><title>TwoFiles</title><p>Authorization complete. You can close this window.</p>
+<!doctype html><meta name="viewport" content="width=device-width"><title>TwoFiles</title>
+<body style="font-family:sans-serif;max-width:600px;margin:40px auto;padding:0 16px">
+<h2>Tesla authorization complete</h2><p>Copy this code and paste it into the secure box in your chat:</p>
+<textarea id="c" readonly style="width:100%;height:90px"></textarea>
+<button onclick="navigator.clipboard.writeText(document.getElementById('c').value)">Copy code</button>
+<script>document.getElementById('c').value=new URLSearchParams(location.search).get('code')||'No code found';</script>
